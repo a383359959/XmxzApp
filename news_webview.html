@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/dropload.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/dropload.min.js"></script>
+		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/news_webview.js"></script>
+	</head>
+	<body>
+		<header>资讯</header>
+		<div class="h50"></div>
+		<div class="news">
+			<ul></ul>
+			<script id="list" type="text/html">
+				{{each list as value key}}
+				<li news_id="{{value.id}}">
+					<div class="news_container">
+						<img src="images/pic.jpg" />
+						<p>{{value.title}}</p>
+						<div class="clear"></div>
+					</div>
+					<div class="news_item">
+						<span>{{value.add_time}}</span>
+						<i><img src="images/icon_news_read.png" />{{value.view}}</i>
+						<div class="clear"></div>
+					</div>
+				</li>
+				{{/each}}
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/dropload.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/dropload.min.js"></script>
+		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/reg.js"></script>
+		<style>
+			body,html{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span>注册</span>
+		</header>
+		<div class="h50"></div>
+		<div class="login">
+			<div class="login_main">
+				<ul>
+					<li class="select">
+						<span>选择省</span>
+						<select name="province">
+							<option value="0">请选择</option>
+						</select>
+					</li>
+					<li class="select">
+						<span>选择市</span>
+						<select name="city">
+							<option value="0">请选择</option>
+						</select>
+					</li>
+					<li class="select">
+						<span>选择区</span>
+						<select name="area">
+							<option value="0">请选择</option>
+						</select>
+					</li>
+					<li class="select">
+						<span>选择机构</span>
+						<select name="mechanism">
+							<option value="0">请选择</option>
+						</select>
+					</li>
+					<li class="select">
+						<span>学生 / 家长</span>
+						<select name="role">
+							<option value="0">学生 / 家长</option>
+							<option value="1">老师</option>
+							<option value="2">代理商</option>
+						</select>
+					</li>
+					<li><input type="tel" name="username" placeholder="手机号码" /></li>
+					<li><input type="text" name="text" placeholder="验证码" /></li>
+					<li><input type="password" name="password" placeholder="密码" /></li>
+					<li><input type="password" name="confirm_password" placeholder="确认密码" /></li>
+					<li><a href="javascript:;" class="submit">注册</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

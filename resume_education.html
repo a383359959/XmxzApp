@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/dropload.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/dropload.min.js"></script>
+		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/resume_education.js"></script>
+	</head>
+	<body>
+		<header>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span>教育背景</span>
+		</header>
+		<div class="h50"></div>
+		<div class="mui-content resume_education">
+			<ul class="mui-table-view"></ul>
+			<script id="list" type="text/html">
+				{{each list as value key}}
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red" data_id="{{value.id}}">删除</a>
+					</div>
+					<div class="mui-slider-handle" data_id="{{value.id}}">
+						<p>{{value.admission_year}}-{{value.admission_month}} 至 {{value.graduation_year}}-{{value.graduation_month}}</p>
+						<h1>{{value.school_name}}</h1>
+						<p>{{value.degree_name}} | {{value.professional_name}}</p>
+						<i class="mui-icon mui-icon-arrowright"></i>
+					</div>
+				</li>
+				{{/each}}
+			</script>
+			<a href="javascript:;" class="add_edu">添加教育背景</a>
+		</div>
+	</body>
+</html>
