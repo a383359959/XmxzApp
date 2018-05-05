@@ -11,32 +11,211 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/init.js"></script>
 		<script type="text/javascript" src="js/dropload.min.js"></script>
-		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
 		<script type="text/javascript" src="js/show_webview.js"></script>
+		<style type="text/css">
+			.show_webview{
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+				right: 0px;
+				background: url(images/background.png) no-repeat;
+				background-size: 100%;
+			}
+			.show_logo{
+				position: fixed;
+				width: 40%;
+				left: 30%;
+				top: 0px;
+			}
+			.show_back{
+				position: fixed;
+				width: 5%;
+				left: 5%;
+				top: 5%;
+			}
+			.show_bg{
+				/*background: url(images/show_bg.png) no-repeat;
+				background-size: 100%;*/
+				position: fixed;
+				top: 30%;
+				left: 10%;
+				right: 10%;
+				/*bottom: 10%;*/
+				/*overflow: hidden;*/
+			}
+			.show_bg_main{
+				background: url(images/show_center.png) repeat-y;
+				background-size: 100%;
+				padding-left: 30px;
+				padding-right: 30px;
+				/*margin-bottom: -2%;*/
+				position: relative;
+			}
+			.show_bg_main li{
+				width: calc((100% - 8%) / 5);
+				position: relative;
+				z-index: 1;
+				float: left;
+				margin-right: 2%;
+				margin-bottom: 2%;
+			}
+			.show_bg_main li:nth-child(5n){
+				margin-right: 0px;
+			}
+			.show_bg_main li .pos{
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+			}
+			.show_bg_main ul{
+				/*display: none;*/
+				opacity: 0;
+				position: absolute;
+				top: 0px;
+				right: 30px;
+				left: 30px;
+			}
+			.show_bg_main ul:first-child{
+				display: block;
+				opacity: 1;
+				position: static;
+			}
+			a.left_ico{
+				display: block;
+				width: 50px;
+				position: absolute;
+				top: 50%;
+				left: -26px;
+				margin-top: -29.5px;
+				z-index: 2;
+			}
+			a.right_ico{
+				display: block;
+				width: 50px;
+				position: absolute;
+				top: 50%;
+				right: -26px;
+				margin-top: -29.5px;
+				z-index: 2;
+			}
+			img{
+				width: 100%;
+				display: block;
+			}
+		</style>
 	</head>
 	<body>
-		<header>
-			<span>展示</span>
-		</header>
-		<div class="h50"></div>
-		<div class="news">
-			<ul></ul>
-			<script id="list" type="text/html">
-				{{each list as value key}}
-				<li data_id="{{value.id}}">
-					<div class="news_container">
-						<img src="images/pic.jpg" />
-						<p>{{value.title}}</p>
+		<div class="show_webview">
+			<div class="show_back" v-on:tap="close"><img src="images/show_back.png" /></div>
+			<div class="show_logo"><img src="images/show_logo.png" /></div>
+			<div class="show_bg">
+				<a href="javascript:;" class="left_ico" v-on:tap="changeLearn('left')"><img src="images/left_ico.png" /></a>
+				<div class="show_bg_top"><img src="images/show_top.png" /></div>
+				<div class="show_bg_main">
+					<ul>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/1.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/2.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/3.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/4.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/5.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/6.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/7.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/8.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/9.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/10.png" class="pos" />
+						</li>
 						<div class="clear"></div>
-					</div>
-					<div class="news_item">
-						<span>{{value.add_time}}</span>
-						<i><img src="images/icon_news_read.png" />{{value.view}}</i>
+					</ul>
+					<ul>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/11.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/12.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/13.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/14.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/15.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/16.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/17.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/18.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/19.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/20.png" class="pos" />
+						</li>
 						<div class="clear"></div>
-					</div>
-				</li>
-				{{/each}}
-			</script>
+					</ul>
+					<ul>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/21.png" class="pos" />
+						</li>
+						<li>
+							<img src="images/ex.jpg" />
+							<img src="images/ico/22.png" class="pos" />
+						</li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="show_bg_bottom"><img src="images/show_bottom.png" /></div>
+				<a href="javascript:;" class="right_ico" v-on:tap="changeLearn('right')"><img src="images/right_ico.png" /></a>
+			</div>
 		</div>
 	</body>
 </html>

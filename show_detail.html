@@ -11,13 +11,69 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/init.js"></script>
 		<script type="text/javascript" src="js/dropload.min.js"></script>
-		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
 		<script type="text/javascript" src="js/show_detail.js"></script>
 		<style>
-			body,html{
-				background: #fff;
+			.show_webview{
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+				right: 0px;
+				background: url(images/background.png) no-repeat;
+				background-size: 100%;
+			}
+			.show_back{
+				position: fixed;
+				width: 5%;
+				left: 5%;
+				top: 5%;
+			}
+			.show_gif{
+				position: fixed;
+				top: 50%;
+				left: 0px;
+				right: 0px;
+			}
+			.show_gif li{
+				float: left;
+				width: 25%;
+			}
+			.show_gif li img{
+				width: 70%;
+				margin: auto;
+			}
+			.show_title img{
+				width: 40%;
+				margin: auto;
+				margin-top: 5%;
+			}
+			img{
+				width: 100%;
+				display: block;
 			}
 		</style>
 	</head>
-	<body></body>
+	<body>
+		<div class="show_webview">
+			<div class="show_back mui-action-back mui-pull-left"><img src="images/show_back.png" /></div>
+			<div class="show_title"><img src="" /></div>
+			<div class="show_gif">
+				<ul>
+					<li>
+						<img src="images/gif/1.gif" />
+					</li>
+					<li>
+						<img src="images/gif/2.gif" />
+					</li>
+					<li>
+						<img src="images/gif/3.gif" />
+					</li>
+					<li>
+						<img src="images/gif/4.gif" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
 </html>

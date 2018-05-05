@@ -1,5 +1,23 @@
 mui.plusReady(function(){
 	
+	new Vue({
+		el : '.show_webview',
+		data : {
+			view : null
+		},
+		mounted : function(){
+			this.view = plus.webview.currentWebview();
+			this.setTitle();
+		},
+		methods : {
+			setTitle : function(){
+				var title = 'images/title/' + this.view.num + '.png';
+				$('.show_title img').attr('src',title);
+			}
+		}
+	});
+	
+	/*s
 	plus.screen.lockOrientation('landscape');
 	
 	var webview = plus.webview.currentWebview();
@@ -28,5 +46,6 @@ mui.plusReady(function(){
 	embed.addEventListener('loading',function(){
 		plus.nativeUI.showWaiting();
 	},false);
+	*/
 	
 });
