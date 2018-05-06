@@ -13,39 +13,20 @@ mui.plusReady(function(){
 			setTitle : function(){
 				var title = 'images/title/' + this.view.num + '.png';
 				$('.show_title img').attr('src',title);
+			},
+			BSBC : function(){
+				var url = ip + 'index.php/Api/BSBC/learn' + this.view.num + '.html';
+				openWindow('show_url.html',{
+					url : url
+				});
+			},
+			MQYL : function(){
+				var url = ip + 'index.php/Api/MQYL/learn' + this.view.num + '.html';
+				openWindow('show_url.html',{
+					url : url
+				});
 			}
 		}
 	});
-	
-	/*s
-	plus.screen.lockOrientation('landscape');
-	
-	var webview = plus.webview.currentWebview();
-	
-	var option = {
-		top : '0px',
-		bottom : '0px',
-		position : 'dock',
-		dock : 'bottom',
-		bounce : 'vertical'
-	};
-	
-	var embed = plus.webview.create(webview.url,'embed',option);
-	
-	webview.append(embed);
-		
-	embed.addEventListener('loaded',function(){
-		plus.nativeUI.closeWaiting();
-	},false);
-	
-	document.addEventListener('closed',function(){
-		plus.screen.lockOrientation('portrait');
-		plus.webview.currentWebview().close();
-	});
-	
-	embed.addEventListener('loading',function(){
-		plus.nativeUI.showWaiting();
-	},false);
-	*/
 	
 });
